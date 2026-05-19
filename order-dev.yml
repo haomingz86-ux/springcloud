@@ -14,13 +14,6 @@ spring:
     username: guest
     password: guest
     virtual-host: /
-  zipkin:
-    base-url: http://localhost:9042
-    sender:
-      type: web
-  sleuth:
-    sampler:
-      probability: 1
 
 management:
   endpoints:
@@ -42,8 +35,3 @@ feign:
   hystrix:
     enabled: true
 
-logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss.SSS}
-[%thread] %-5level %logger{36} - traceId=%X{traceId:-}
-spanId=%X{spanId:-} - %msg%n"
