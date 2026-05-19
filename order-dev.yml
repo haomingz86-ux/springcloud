@@ -8,6 +8,12 @@ spring:
         url: http://localhost:7779
   application:
     name: order-service
+  rabbitmq:
+    host: 192.168.199.132 # rabbitmq所在虚机地址
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
 
 management:
   endpoints:
