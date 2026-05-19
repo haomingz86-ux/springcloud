@@ -14,6 +14,13 @@ spring:
     username: guest
     password: guest
     virtual-host: /
+  zipkin:
+    base-url: http://localhost:9042
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
 
 management:
   endpoints:

@@ -12,6 +12,14 @@ spring:
     show-sql: true
     generate-ddl: true
     database: mysql
+  zipkin:
+    base-url: http://localhost:9042
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+      
 eureka:
   client:
     register-with-eureka: true # 作为客户端需要注册到Eureka
