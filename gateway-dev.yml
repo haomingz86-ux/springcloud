@@ -1,0 +1,25 @@
+server:
+  port: 8222
+spring:
+  application:
+    name: myshop-gateway
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    prefer-ip-address: true
+#zuul的动态路由配置
+zuul:
+  routes:
+    user-service:
+      path: /user-service  # 需要转发的路径
+      serviceId: user-service # 最终转发的微服务（名称）
+    order-service:
+      path: /order-service  # 需要转发的路径
+      serviceId: order-service # 最终转发的微服务（名称）
+  SendErrorFilter:
+    error:
+      disable: true
